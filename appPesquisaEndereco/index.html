@@ -8,7 +8,7 @@
 	<script>
 		function getDadosEndPorCEP() {
 			let cep = document.getElementById('cep').value;
-			
+
 
 			let url = 'https://viacep.com.br/ws/' + cep + '/json/unicode/';
 
@@ -33,6 +33,14 @@
 
 			xmlHttp.send()
 
+		}
+		function limparCampos() {
+
+			document.getElementById('cep').value = "";
+			document.getElementById('endereco').value = "";
+			document.getElementById('bairro').value = "";
+			document.getElementById('cidade').value = "";
+			document.getElementById('uf').value = "";
 		}
 	</script>
 </head>
@@ -71,8 +79,11 @@
 		</div>
 
 		<div class="row form-group">
-			<div class="col-sm-2">
+			<div class="col-sm-1">
 				<button class="btn btn-primary" type="button" onclick='getDadosEndPorCEP()'>Buscar</button>
+			</div>
+			<div class="col-sm-1">
+				<button class="btn btn-danger" type="button" onclick='limparCampos()'>Limpar</button>
 			</div>
 		</div>
 	</div>
